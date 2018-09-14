@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game Of Life - with Rails, Stimulus.js and Turbolinks</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_pack_tag 'stylesheets', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="A variation of the Game of Life, implemented with Ruby on Rails and Stimulus.js">
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="d-flex justify-content-center">
+        <div class="p-2">
+          <%= yield %>
+        </div>
+      </div>
+
+      <%= render 'game_of_life/tldr' %>
+    </div>
+
+    <div class="container pb-5">
+      <footer class="pt-4 pb-md-5 border-top">
+        <div class="row">
+          <div class="col-12 col-md">
+            <h5>About Me:</h5>
+            <p>
+              Hi, I'm <a href="https://twitter.com/DonSchado" title="@DonSchado">Marco</a>. I'm working for <a href="https://www.railslove.com/" title="One team for various applications and digital products">Railslove</a> – a super awesome web developement consultancy from <a href="https://en.wikipedia.org/wiki/Cologne" title="Cologne is a very nice city">Cologne</a>.
+            </p>
+            <p>
+              Our Team loves to build applications and innovative digital products for the web.
+              <a href="mailto:kontakt@railslove.com">Let's talk</a> about your project and find out how we can support you!
+            </p>
+          </div>
+        </div>
+        <small class="text-muted">© 2018</small>
+      </footer>
+    </div>
+  </body>
+</html>

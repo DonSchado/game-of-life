@@ -1,0 +1,33 @@
+$white:    #fff !default;
+$gray-100: #f6f6f6 !default;
+$gray-200: #f0f0f0 !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #999 !default;
+$gray-700: #555 !default;
+$gray-800: #333 !default;
+$gray-900: #222 !default;
+$black:    #000 !default;
+
+$blue:    #158CBA !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #FF4136 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #FF851B !default;
+$green:   #4EA53A !default;
+$teal:    #20c997 !default;
+$cyan:    #75CAEB !default;
+
+$primary:       $green !default;
+$secondary:     $gray-200 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-700 !default;
+
+$font-size-base:              0.875rem !default;

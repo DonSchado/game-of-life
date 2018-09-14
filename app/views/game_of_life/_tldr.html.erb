@@ -1,0 +1,107 @@
+<div class="d-flex justify-content-center">
+  <div class="p-5">
+    <div class="row">
+      <h3 class="text-center">
+        Conway's Game Of Life
+        <small class="text-muted">on Rails with Stimulus.js</small>
+      </h3>
+    </div>
+
+    <div class="text-center">
+      <p class="lead">
+        Sounds <code>ridiculous</code>? It is! :)
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="row p-3">
+  <div class="col-md-12">
+    <h5>TL;DR:</h5>
+
+    <p>This is a variation of the
+      <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life" title="The Game of Life, is a cellular automaton devised by the mathematician John H. Conway in 1970.">Game of Life</a>,
+      implemented with <a href="https://rubyonrails.org/" title="Imagine what you could build if you learned Ruby on Rails">Ruby on Rails</a>,
+      where each generation is requested via AJAX and gets entirely <strong>computed and rendered server-side</strong> so that the browser only needs to replace the grid in the DOM.
+      On top I sprinkled some <a href="https://stimulusjs.org/" title="A modest JavaScript framework for the HTML you already have">Stimulus.js</a>
+      to add just enough behavior to make it shine.
+      If you look very closely you will also see <a href="https://github.com/turbolinks/turbolinks" title="Turbolinks makes navigating your web application faster">Turbolinks</a> in action.
+      Oh... and by the way: the <a href="https://guides.rubyonrails.org/asset_pipeline.html" title="We've had good times... it's not you, it's me... we'll stay friends!">Asset Pipeline</a>
+      was exchanged for a complete <a href="https://webpack.js.org/" title="The new kid on the block to bundle javascript and friends (and it's dependencies)">Webpack</a> setup, so no <a href="" title="The former solution for compiling and serving assets in Rails">Sprockets</a> have been harmed in delivering JavaScript and Stylesheets.
+    </p>
+
+    <p>
+      The Rules of the game describe how every cell interacts with its neighbours:
+      <ol>
+        <li>Any live cell with fewer than two live neighbors dies by <strong>under popolation</strong>.</li>
+        <li>Any live cell with two or three live neighbors lives on to the <strong>next generation</strong>.</li>
+        <li>Any live cell with more than three live neighbors dies by <strong>overpopulation</strong>.</li>
+        <li>Any dead cell with exactly three live neighbors becomes a live cell by <strong>reproduction</strong>.</li>
+      </ol>
+    </p>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <h5>But WHY...?</h5>
+    <p class="text-justify">Because it's a <code>funny</code> way to learn the underlying frameworks... and I believe nobody has ever done it before (in that "architecural" style at least) ¯\_(ツ)_/¯.
+      <br><small class="text-muted">(Any Arguments how this could have been done differently might be valid.)</small></p>
+
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <h5>How to play:</h5>
+    <p class="text-justify">
+      <ul>
+        <li>You can click individual cells to toggle their state and see how they transition by clicking: <code>Next Generation</code>.</li>
+        <li>Clicking <code>Reset</code> creates an empty configuration.</li>
+        <li>There is also a <code>Draw Mode</code> available with the <em>shortcut</em> <code>d</code>.</span> Hovering over the cells will toggle their state. <small class="text-muted">(Not available on touch devices...)</small></li>
+        <li><%= link_to 'Load the example', root_path %></li>
+      </ul>
+    </p>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <h5>Found a cool pattern you want to share?</h5>
+
+    <p class="text-justify">
+      You can initialize the board by adding a custom state to the URL (<code>/10100000000001100000000001</code>).<br>
+      To get a the current state just click <code>share</code>, and you will see the shareable URL in your browsers address bar.<br>
+      Have fun!
+    </p>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <h5>Show me the Code!</h5>
+    <p class="text-justify">
+      I'm so glad that you are curious to see how I built this.
+      The complete code including a small setup guide is available on <a href="https://github.com/DonSchado/game-of-life" title="GitHub is how people build software">Github</a> :)
+
+      Please don't hesistate to get in touch if you have any questions or suggestions (no solution will ever be the single perfect one).
+    </p>
+  </div>
+
+  <div class="col-md-12 mt-4">
+    <h5>Challenges:</h5>
+
+    <p class="text-justify">
+      I invite you to clone the code and fiddle around with it for yourself. There are some interesting ideas I didn't include in this simple example:
+
+      <ul class="list-unstyled">
+        <li><code>Auto Play Mode:</code> &nbsp; with the possibility to adjust the interval how often the form is submitted per second.</li>
+        <li><code>Resize Board Option:</code> &nbsp; via select box, or directly with javascript. Stimulus actions can also trigger on the resize@window event.</li>
+        <li><code>Save/Load Board State:</code> &nbsp; this might be cool for collecting patterns.</li>
+        <li><code>Statistics:</code> &nbsp; count the number of generations and living/dead cells.</li>
+      </ul>
+    </p>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center">
+  <div class="p-4">
+    <div class="row">
+      <h4>
+        KTHXBYE, have a nice day!
+      </h4>
+    </div>
+  </div>
+</div>

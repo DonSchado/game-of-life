@@ -1,0 +1,39 @@
+<%= form_with model: game_of_life, scope: :game, url: :game_of_life, id: 'game',
+  data: { controller: 'game', action: 'keyup@window->game#enableDraw' } do |f| %>
+  <%= f.hidden_field :state, value: '', data: { target: 'game.state' } %>
+
+  <% game_of_life.each_with_index do |cell, i| %>
+    <%= tag(:br) if game_of_life.linebreak?(i) %>
+
+    <button
+      type="button"
+      class="cell"
+      data-action="click->game#toggleCell mouseover->game#draw touchstart->game#draw"
+      data-target="game.cell"
+      data-state="<%= cell %>"
+    >
+      &nbsp;
+    </button>
+  <% end %>
+
+  <div class="form-row mt-3">
+    <div class="col d-flex justify-content-between">
+      <%= f.submit 'Next Generation', class: 'btn btn-outline-primary btn-sm',
+        data: { action: 'game#generation' } %>
+
+      <%= link_to 'Reset', root_path, class: 'btn-sm' %>
+
+      <%= link_to 'Share', '#', class: 'btn-sm', data: { action: 'game#copy', target: 'game.share' } %>
+
+      <button
+        type="button"
+        class="btn btn-outline-secondary btn-sm d-none d-lg-block"
+        data-action="game#toggleDrawMode"
+        data-target="game.drawBtn"
+        data-active-class="btn-outline-danger"
+      >
+        Draw Mode
+      </button>
+    </div>
+  </div>
+<% end %>

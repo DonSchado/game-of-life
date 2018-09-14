@@ -1,0 +1,24 @@
+@import '../src/stylesheets/variables';
+@import '../src/stylesheets/bootstrap';
+
+.turbolinks-progress-bar {
+  height: 5px;
+  background-color: $primary;
+}
+
+a {
+  text-decoration: underline;
+}
+
+.cell {
+  @extend .btn;
+  @extend .btn-sm;
+
+  &[data-state='0'] {
+    @extend .btn-outline-secondary;
+  }
+
+  &[data-state='1'] {
+    @extend .btn-dark;
+  }
+}
