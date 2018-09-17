@@ -50,7 +50,19 @@ Remove the line with `stylesheet_link_tag` in app/views/layouts/application.html
 <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
 ```
 
-Edit the Gemfile to add the turbolinks gem for having "javascript redirect support" in the controller:
+The `webpack/packs/stylesheets.scss` just imports bootstrap
+
+```scss
+@import '../src/stylesheets/variables';
+@import '../src/stylesheets/bootstrap';
+```
+
+add `src/bootstrap.scss`
+```scss
+@import '~bootstrap/scss/bootstrap';
+```
+
+Then edit the Gemfile to add the turbolinks gem for having "javascript redirect support" in the controller:
 
 ```ruby
 gem 'turbolinks', '~> 5'
