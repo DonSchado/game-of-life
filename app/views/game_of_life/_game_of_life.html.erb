@@ -21,9 +21,8 @@
       <%= f.submit 'Next Generation', class: 'btn btn-outline-primary btn-sm',
         data: { action: 'game#generation' } %>
 
-      <%= link_to 'Reset', '/0', class: 'btn-sm' %>
-
-      <%= link_to 'Share', '#', class: 'btn-sm', data: { action: 'game#copy', target: 'game.share' } %>
+      <%= link_to 'Reset', '/reset', class: 'btn-sm' %>
+      <%= link_to 'Share', '/share', class: 'btn-sm', data: { action: 'game#copy', target: 'game.share' } %>
 
       <button
         type="button"

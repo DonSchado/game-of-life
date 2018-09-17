@@ -29,16 +29,6 @@
       Oh... and by the way: the <a href="https://guides.rubyonrails.org/asset_pipeline.html" title="We've had good times... it's not you, it's me... we'll stay friends!">Asset Pipeline</a>
       was exchanged for a complete <a href="https://webpack.js.org/" title="The new kid on the block to bundle javascript and friends (and it's dependencies)">Webpack</a> setup, so no <a href="" title="The former solution for compiling and serving assets in Rails">Sprockets</a> have been harmed in delivering JavaScript and Stylesheets.
     </p>
-
-    <p>
-      The Rules of the game describe how every cell interacts with its neighbours:
-      <ol>
-        <li>Any live cell with fewer than two live neighbors dies by <strong>under popolation</strong>.</li>
-        <li>Any live cell with two or three live neighbors lives on to the <strong>next generation</strong>.</li>
-        <li>Any live cell with more than three live neighbors dies by <strong>overpopulation</strong>.</li>
-        <li>Any dead cell with exactly three live neighbors becomes a live cell by <strong>reproduction</strong>.</li>
-      </ol>
-    </p>
   </div>
 
   <div class="col-md-12 mt-4">
@@ -48,7 +38,7 @@
 
   </div>
 
-  <div class="col-md-12 mt-4">
+  <div class="col-md-12 mt-3 p-3 bg-light border border-primary">
     <h5>How to play:</h5>
     <p class="text-justify">
       <ul>
@@ -57,6 +47,16 @@
         <li>There is also a <code>Draw Mode</code> available with the <em>shortcut</em> <code>d</code>.</span> Hovering over the cells will toggle their state. <small class="text-muted">(Not available on touch devices...)</small></li>
         <li><%= link_to 'Load the example', root_path %></li>
       </ul>
+    </p>
+
+    <p>
+      The Rules of the game describe how every cell interacts with its neighbours:
+      <ol>
+        <li>Any live cell with fewer than two live neighbors dies by <strong>under popolation</strong>.</li>
+        <li>Any live cell with two or three live neighbors lives on to the <strong>next generation</strong>.</li>
+        <li>Any live cell with more than three live neighbors dies by <strong>overpopulation</strong>.</li>
+        <li>Any dead cell with exactly three live neighbors becomes a live cell by <strong>reproduction</strong>.</li>
+      </ol>
     </p>
   </div>
 
@@ -74,9 +74,10 @@
     <h5>Show me the Code!</h5>
     <p class="text-justify">
       I'm so glad that you are curious to see how I built this.
-      The complete code including a small setup guide is available on <a href="https://github.com/DonSchado/game-of-life" title="GitHub is how people build software">Github</a> :)
+      The complete code is available on <a href="https://github.com/DonSchado/game-of-life" title="GitHub is how people build software">Github</a> :)
 
-      Please don't hesistate to get in touch if you have any questions or suggestions (no solution will ever be the single perfect one).
+      Please don't hesistate to get in touch if you have any questions or suggestions since no solution will ever be the single perfect one.
+      <em>(Yes, I see a ton of possible improvements too, but as everything it comes with trade offs, so I decided to keep it as small as possible, while having something that demonstrates the idea nonetheless.)</em>
     </p>
   </div>
 
@@ -100,7 +101,7 @@
   <div class="p-4">
     <div class="row">
       <h4>
-        KTHXBYE, have a nice day!
+        KTHXBYE, HAVE A NICE DAY!
       </h4>
     </div>
   </div>
