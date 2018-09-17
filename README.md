@@ -13,7 +13,7 @@ This is a variation of the Game of Life, implemented with Ruby on Rails, where e
 5. Run the rails server `rails s -p 9000` (because it will be so turbo)
 5. Navigate your browser to `localhost:9000`
 
-_Since this is not a setup tutorial and for some reason something does "not work",
+_Since this is not a setup tutorial and if for some reason something does "not work",
 please refer to the amazingly detailed [rails guides](https://guides.rubyonrails.org/development_dependencies_install.html)._
 
 
