@@ -10,14 +10,14 @@ class GameOfLife
   attr_reader :cells, :rows, :columns
 
   def initialize(options = {})
-    @rows    = ROWS
-    @columns = COLUMNS
-    @cells   = (options[:state] || EXAMPLE).ljust(board_size, '0')[0...board_size].chars.map(&valid_state)
+    @rows    = (options[:rows]    || ROWS).to_i.clamp(1, ROWS)
+    @columns = (options[:columns] || COLUMNS).to_i.clamp(1, COLUMNS)
+    @cells   = (options[:state]   || EXAMPLE).ljust(board_size, '0')[0...board_size].chars.map(&valid_state)
   end
 
   def generation
     @cells = cells.each_with_index.map do |cell, index|
-      rules(cell, neighbors_count(index))
+      rules(cell_state: cell, neighbors_count: neighbors_count(index))
     end
 
     self
@@ -46,7 +46,7 @@ class GameOfLife
     ->(char) { [char.to_i, 1].min } # only 0 & 1
   end
 
-  def rules(cell_state, neighbors_count)
+  def rules(cell_state:, neighbors_count:)
     return 1 if neighbors_count == 3                    # IT'S ALIVE! (rule 4)
     return 1 if [cell_state, neighbors_count] == [1, 2] # unchanged (rule 3)
     0                                                   # under-/overpopulation (rules 1+2)

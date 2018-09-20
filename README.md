@@ -19,7 +19,7 @@ please refer to the amazingly detailed [rails guides](https://guides.rubyonrails
 
 ## Some notes on what I did (the webpack way):
 
-I created a fresh project with: 
+I created a fresh project with:
 ```
 rails _5.2.1.rc1_ new turbo-game-of-life --webpack=stimulus -JSCT -d sqlite3
 ```
@@ -28,10 +28,26 @@ _(For the heroku deployment I switched to postgresql, but at the moment the app 
 
 `-JSCT` expands to:
 * --skip-javascript
-* --skip-sprockets 
+* --skip-sprockets
 * --skip-action-cable (for no reason I kept action-mailer and active-storage...)
 * --skip-test (:scream:)
 
+if you want to disable sprockets on an exsisting application you need to select the frameworks manually in config/application.rb:
+
+```ruby
+require "rails"
+# Pick the frameworks you want:
+require "active_model/railtie"
+require "active_job/railtie"
+require "active_record/railtie"
+require "active_storage/engine"
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "action_view/railtie"
+# require "sprockets/railtie"
+```
+
+Also check all the _environment_ and _initializer_ files for any hidden `config.assets` settings ;)
 
 This brought me in the position to start moving away from the asset pipeline and go all-in webpack:
 
@@ -43,7 +59,7 @@ config.generators.assets = false
 
 And then `rm -rf app/assets` :wave:.
 
-I renamed the webpack folder from ambiguous _javascript_ to _webpack_ `mv app/javascript app/webpack`, but the folder structure is totally up to you (but this requires to change the `source_path` in _webpacker.yml_ to `app/webpack`). 
+I renamed the webpack folder from ambiguous _javascript_ to _webpack_ `mv app/javascript app/webpack`, but the folder structure is totally up to you (but this requires to change the `source_path` in _webpacker.yml_ to `app/webpack`).
 
 Remove the line with `stylesheet_link_tag` in app/views/layouts/application.html.erb
 
@@ -102,7 +118,7 @@ Now start the webpack dev server `./bin/webpack-dev-server`
 :tada:
 
 
-I hope that's clear. 
+I hope that's clear.
 If you have any questions, don't hesistate to ask.
 
 Until then, have a nice day! :)
