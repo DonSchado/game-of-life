@@ -30,7 +30,7 @@ _(For the heroku deployment I switched to postgresql, but at the moment the app 
 * --skip-javascript
 * --skip-sprockets
 * --skip-action-cable (for no reason I kept action-mailer and active-storage...)
-* --skip-test (:scream:)
+* --skip-test (:scream:) => I prefer to setup rspec :wink:
 
 if you want to disable sprockets on an exsisting application you need to select the frameworks manually in config/application.rb:
 
